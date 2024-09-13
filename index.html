@@ -1,0 +1,410 @@
+<!--
+
+.----------------------------------------------.
+|                                              |
+| 8""""8                8   8  8      8""""8   |
+| 8    " eeeee eeeee    8   8  8 eeee 8    8   |
+| 8e     8   8   8      8e  8  8 8    8eeee8ee |
+| 88     8eee8   8e     88  8  8 8eee 88     8 |
+| 88   e 88  8   88     88  8  8 88   88     8 |
+| 88eee8 88  8   88     88ee8ee8 88ee 88eeeee8 |
+|                                              |
+'----------------------------------------------'
+         That's really meo-o-o-o-ow!
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat.web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #cat-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .cat-image {
+            max-width: 150px;
+            max-height: 150px;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            background-position: center;
+            clip-path: circle(50% at 50% 50%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            position: fixed;
+            bottom: 0;
+            z-index: 5;
+            opacity: 0.7;
+            animation: size1 0.2s forwards ease;
+        }
+        @keyframes size1 {
+            from {
+        transform: scale(1.1);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        @keyframes size2 {
+            from {
+        transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .button:hover {
+            background-color: #0056b3;
+            opacity: 1;
+            animation: size2 0.2s forwards ease;
+        }
+        .off {
+            width: 20px;
+            height: 20px; 
+            margin: -7px 0px;
+        }
+    .container {
+    pointer-events: auto;
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cat {
+    background-image: url('https://avatars.githubusercontent.com/u/171289111?v=4');
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    clip-path: circle(50% at 50% 50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .nickname {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .text {
+    text-align: left;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 467px;
+    max-height: 621px;
+    user-select: none;
+  }
+
+  .footer {
+    text-align: left; 
+    position: relative;
+    font-size: 0.9em;
+    color: #657786;
+  }
+  .devcheck {
+    background-image: url('https://i0.wp.com/www.followchain.org/wp-content/uploads/2022/11/icons8-source-code-350.png?fit=350%2C350&ssl=1');
+    margin: -5px 0px;
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-position: center;
+  }
+    .link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+            text-shadow: 
+                0 0 12px #007bff;
+        }
+        .like {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/4926/4926585.png');
+            height: 25px;
+            width: 25px;
+            background-size: cover;
+            position: absolute;
+            bottom: -5px;
+            right: 45px;
+        }
+        .likes {
+            text-align: left;
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+        }
+    </style>
+</head>
+<body id='content'>
+     <div class="container">
+    <div class="header">
+      <div class="cat"></div>
+      <p id='n' class="nickname">Morphin.Jack</p>
+      <div class='devcheck'></div>
+    </div>
+    <p class="text" id='p'>
+Welcome! All next content is being randomly generated. This project was made just for fun. Have fun:)
+    
+    
+Also, check my latest project: <a href="https://jackmophin.github.io/ps4-download/" class="link">PS4 Loading Animation</a>
+    </p>
+    <img id='i' class="image" src="https://i.ibb.co/0n0x7sB/4.png" alt=":(" draggable='false'>
+    <div class="footer">
+      <span>10:31 PM · Sep 12, 2024</span>
+      <div class='like'></div>
+      <span class='likes'>12345</span>
+    </div>
+  </div>
+    <button class='button' id="fetch-cats">Request Posts</button>
+<script>
+      const firstNames = [
+            'feliz', 'fluffy', 'mittens', 'shadow', 'rizzler', 'bella', 'luna', 'oliver',
+            'simba', 'cleo', 'milo', 'ziggy', 'lily', 'charlie', 'toby', 'leo', 'smokey',
+            'chloe', 'max', 'sophie', 'oscar', 'brawlstarser', 'jack', 'jasper', 'misty',
+            'nala', 'salem', 'socks', 'navi', 'ginger', 'pepper', 'marmalade', 'cali',
+            'pebbles', 'whiskey', 'boots', 'Based' , 'skibidistt', 'rosie', 'sasha', 'coco', 'kiki',
+            'mau', 'figaro', 'paws', 'sigma', 'angel', 'peanut', 'tinker', 'minnie',
+            'muffin', 'lol', 'zara', 'hazel', 'ruby', 'daisy', 'ellie', 'bruh'
+        ];
+        const secondWords = [
+            '0n', 'whiskers', 'fur', 'tail', 'muffin', 'cloud', 'moon', 'star',
+    'berry', 'toys', 'treats', 'cuddle', 'nap', 'dream', 'skittles', 'puff',
+    'snuggle', 'patch', 'flame', 'nationalist', 'ember', 'snow', 'dot', 'bubble',
+    'pearl', 'mist', 'shadow', 'whisper', 'sparkle', 'twinkle', 'bliss', 'smile',
+    'plum', 'candy', 'whimsy', 'fox', 'glow', 'charm', 'crush', 'fuzz',
+    'glimmer', 'peach', 'shine', 'crystal', 'stardust', 'paws', 'flutter', 'twirl',
+    'frost', 'honey', 'jewel', 'tangle', 'dreamer', 'fizz', 'glow', 'grace',
+    'haze', 'epic', 'misty', 'moonlight', 'sapphire', 'doodle'
+        ];
+
+        function generateName() {
+            const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+            let secondWord = '';
+            if (Math.floor(Math.random() * 10) >= 2) {
+            secondWord = `.${secondWords[Math.floor(Math.random() * secondWords.length)]}`;
+            }
+
+            let num = '';
+            if (Math.floor(Math.random() * 10) >= 5) {
+        const number = Math.floor(Math.random() * 19683);
+        const numberStr = number.toString();
+        const sliceLength = Math.floor(Math.random() * 3) + 1;
+        num = numberStr.slice(0, sliceLength);
+    } else {
+        num = '';
+    }
+            const username = `${firstName}${secondWord}${num}`;
+            return username;
+        }
+function random(from, to, time) {
+     let r = Math.floor(Math.random() * (to - from + 1)) + from;
+         if (time === 't') {
+        if (r.toString().length === 1) {
+            return `0${r}`
+        }
+    }
+    return r;
+}
+function randomS(...args) {
+    const randomIndex = Math.floor(Math.random() * args.length);
+    return args[randomIndex];
+}
+function month() {
+    const now = new Date();
+    const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
+    const currentMonthIndex = now.getMonth();
+    return months[currentMonthIndex].slice(0, 3);
+}
+function catSays() {
+    const catSounds = [
+        "Meow", "Mrrr", "Purr", "Mew", "Meeow", "Miaow", "Rrrr", "Mewow", "Nyaa", "Nyah",
+        "Meowww", "Meeew", "Myaa", "Nyaww", "Miaaow", "Mreew", "Meww", "Nyew", "Mrrrr", "Mrowr",
+        "Miawr", "Mrowww", "Mreeow", "Meeawr", "Prrr", "Rrow", "Myaaow", "Meww", "Meeeeow", "Prrrrr",
+        "Mrrrrr", "Meeooow", "Nyarr", "Nyaaow", "Meewow", "Rrroww", "Nyan", "Meeooow", "Miaawr", "Meeaow",
+        "Meowwww", "Nyyow", "Nyoooo", "Meaaow", "Meoor", "Mewrr", "Meowr", "Prrrrow", "Meeawwr", "Mrowrr"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * catSounds.length);
+    return catSounds[randomIndex];
+}
+function setSymbol(text, s, c) {
+    const symbols = [', ', '! ', '? ', '. '];
+    let rs = Math.floor(Math.random() * symbols.length);
+    if (c != 0) {
+    if (text.toString().length < s) {
+        rs = 2 + Math.floor(Math.random() * 2);
+        return symbols[rs];
+    }
+        return symbols[rs];
+ }   return '';
+}
+function catSay() {
+    const r1 = Math.floor(Math.random() * 25);
+    const r = Math.floor(Math.random() * r1) + 1;
+    let output = '';
+    const symbols = [' ', ',', '!', '?']
+    for (let c = 0; c < r; c++) {
+        output += setSymbol(output, r, c) + catSays();
+    }
+    let rand = Math.floor(Math.random() * 6);
+        const emoji = [
+    '🐱',
+    '😺',
+    '😸',
+    '😹',
+    '😻',
+    '😼', 
+    '😽', 
+    '🙀',
+    '😿',
+    '😾',
+    '🐈'
+];
+        if (rand >= 3) {
+            let rand1 = Math.floor(Math.random() * 11);
+            return output + emoji[rand1];
+        }
+    return output;
+}
+</script>
+
+
+<!-- MAIN SCRIPT -->
+
+
+<script>
+    const catContainer = document.getElementById('cat-container');
+    const fetchButton = document.getElementById('fetch-cats');
+
+    async function fetchCatImages() {
+        try {
+            const totalImages = 15 * 5;
+            fetchButton.innerText = 'Wait...'
+            const batchSize = 15;
+            const requests = [];
+            const catImagesPromises = [];
+            for (let i = 0; i < totalImages / batchSize; i++) {
+                catImagesPromises.push(fetch(`https://api.thecatapi.com/v1/images/search?limit=${batchSize}`).then(response => response.json()));
+            }
+            const catImagesData = (await Promise.all(catImagesPromises)).flat();
+            const avatarImagesPromises = [];
+            for (let i = 0; i < totalImages / batchSize; i++) {
+                avatarImagesPromises.push(fetch(`https://api.thecatapi.com/v1/images/search?limit=5`).then(response => response.json()));
+            }
+            const avatarImagesData = (await Promise.all(avatarImagesPromises)).flat();
+            fetchButton.innerText = 'Request Posts'
+            catImagesData.forEach((item, index) => {
+                var container = document.createElement('div');
+                container.className = 'container';
+                var header = document.createElement('div');
+                header.className = 'header';
+                var cat = document.createElement('div');
+                cat.className = 'cat';
+                cat.style.backgroundImage = `url(${item.url})`
+                var nickname = document.createElement('p');
+                nickname.id = 'n';
+                nickname.className = 'nickname';
+                nickname.innerText = generateName();
+                if (avatarImagesData[index]) {
+                    var avatar = document.createElement('img');
+                    avatar.src = avatarImagesData[index].url;
+                    avatar.className = 'cat';
+                    header.appendChild(avatar);
+                }
+                var text = document.createElement('p');
+                text.className = 'text';
+                text.id = 'p';
+                text.innerHTML = catSay();
+                var footer = document.createElement('div');
+                let rnd = 500 + Math.floor(Math.random() * 89653)
+                footer.className = 'footer';
+                footer.innerHTML = `<span>${random(1, 12, 't')}:${random(1, 60, 't')} ${randomS('P', 'A')}M · ${month()} ${random(1, 28, 'f')}, 2024</span>       <div class='like'></div>
+      <span class='likes'>${rnd}</span>`;
+                container.appendChild(header);
+                header.appendChild(nickname);
+                if (Math.floor(Math.random() * 5) == 1) {
+            var devcheck = document.createElement('img');
+            devcheck.src = 'https://cdn-icons-png.flaticon.com/512/9918/9918694.png'
+            devcheck.className = 'off';
+            let d = 0;
+            if (Math.floor(Math.random() * 3) != 2) {
+            d = 55 + Math.floor(Math.random() * 305);
+            } else {
+                d = 0;
+            }
+
+            devcheck.style.filter = `hue-rotate(${d}deg)`; 
+            header.appendChild(devcheck);
+                };
+                container.appendChild(text);
+                if (Math.floor(Math.random() * 15) >= 3) {
+                var image = document.createElement('img');
+                image.id = 'i';
+                image.className = 'image';
+                image.src = item.url;
+                image.alt = ':(';
+                image.draggable = false;
+                container.appendChild(image);
+            }
+                container.appendChild(footer);
+                document.getElementById('content').appendChild(container);
+            });
+    
+        } catch (error) {
+            console.error('Error fetching cat images:', error);
+        }
+    }
+
+    fetchButton.addEventListener('click', fetchCatImages);
+</script>
+</body>
+</html>
